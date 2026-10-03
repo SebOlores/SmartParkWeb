@@ -1,0 +1,1035 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f4f8;
+    color: #111827;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ── WRAPPER ── */
+.sp-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* ── NAVBAR ── */
+.sp-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.sp-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sp-logo {
+    width: 40px;
+    height: 40px;
+    background: #16a34a;
+    border-radius: 10px;
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sp-brand-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.sp-brand-sub {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.sp-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.sp-clock {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    text-align: right;
+    line-height: 1.4;
+}
+
+.sp-icon-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #6b7280;
+    background: #fff;
+}
+
+    .sp-icon-btn:hover {
+        background: #f3f4f6;
+    }
+/* ── PAGE CONTENT ── */
+.sp-content {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    flex: 1;
+}
+
+/* ── STAT CARDS (Dashboard top row) ── */
+.sp-stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.sp-stat-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid #f3f4f6;
+}
+
+.sp-stat-label {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+.sp-stat-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.sp-stat-sub {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.sp-stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #dbeafe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+    .sp-stat-icon.green {
+        background: #dcfce7;
+    }
+
+/* ── GREEN BANNER CARD (Available Spots) ── */
+.sp-avail-card {
+    background: #16a34a;
+    border-radius: 12px;
+    padding: 20px 24px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.sp-avail-label {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 4px;
+}
+
+.sp-avail-value {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.sp-avail-sub {
+    font-size: 13px;
+    opacity: 0.75;
+}
+
+.sp-p-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 900;
+    color: white;
+}
+/* ── ACTION CARDS (Vehicle Entry / Exit) ── */
+.sp-action-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.sp-action-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 16px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+}
+
+    .sp-action-card.entry {
+        border: 2px dashed #16a34a;
+    }
+
+    .sp-action-card.exit {
+        border: 2px dashed #f59e0b;
+    }
+
+.sp-action-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+}
+
+.sp-action-card.entry .sp-action-icon {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.sp-action-card.exit .sp-action-icon {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+/* ── RECENT ACTIVITY CARD ── */
+.sp-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px 20px;
+    border: 1px solid #f3f4f6;
+}
+
+.sp-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.sp-card-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.sp-view-all {
+    color: #16a34a;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ── ACTIVITY ROW ── */
+.sp-activity-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+    .sp-activity-row:last-child {
+        border-bottom: none;
+    }
+
+.sp-check {
+    width: 28px;
+    height: 28px;
+    background: #16a34a;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.sp-activity-plate {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.sp-activity-date {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.sp-amount {
+    color: #16a34a;
+    font-weight: 700;
+    font-size: 15px;
+}
+/* ── PAGE TITLE ── */
+.sp-page-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+    .sp-page-title h2 {
+        font-size: 22px;
+        font-weight: 800;
+    }
+
+.sp-back-btn {
+    color: #6b7280;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* ── FORM ELEMENTS ── */
+.sp-form-group {
+    margin-bottom: 18px;
+}
+
+    .sp-form-group label {
+        display: block;
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+        .sp-form-group label .req {
+            color: #dc2626;
+        }
+
+.sp-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #111827;
+    background: #fff;
+}
+
+    .sp-input:focus {
+        outline: none;
+        border-color: #16a34a;
+        box-shadow: 0 0 0 3px rgba(22,163,74,0.1);
+    }
+
+.sp-textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+/* ── VEHICLE TYPE TOGGLE ── */
+.sp-type-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.sp-type-btn {
+    padding: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+    .sp-type-btn.active {
+        border: 2px solid #16a34a;
+        background: #f0fdf4;
+        color: #16a34a;
+    }
+
+/* ── BUTTONS ── */
+.sp-btn-green {
+    width: 100%;
+    padding: 15px;
+    background: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+    .sp-btn-green:hover {
+        background: #15803d;
+    }
+
+.sp-btn-dark {
+    width: 100%;
+    padding: 15px;
+    background: #1f2937;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.sp-btn-red {
+    width: 100%;
+    padding: 15px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.sp-btn-small-pay {
+    padding: 6px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 7px;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.sp-btn-small-exit {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 7px;
+    background: #fef3c7;
+    color: #d97706;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+/* ── VEHICLE EXIT LIST ── */
+.sp-search-wrap {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.sp-search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #9ca3af;
+}
+
+.sp-search {
+    width: 100%;
+    padding: 13px 14px 13px 40px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.sp-parked-list {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #f3f4f6;
+    overflow: hidden;
+}
+
+.sp-parked-header {
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.sp-parked-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+    .sp-parked-row:last-child {
+        border-bottom: none;
+    }
+
+.sp-veh-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #dbeafe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 12px;
+}
+
+    .sp-veh-icon.motor {
+        background: #ede9fe;
+    }
+
+.sp-veh-plate {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.sp-veh-duration {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.sp-veh-paid {
+    font-size: 12px;
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.sp-veh-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-direction: column;
+    text-align: right;
+}
+
+.sp-veh-amount {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.sp-veh-btns {
+    display: flex;
+    gap: 6px;
+}
+
+/* ── PAYMENT HISTORY ── */
+.sp-tab-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 16px;
+}
+
+.sp-tab {
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+    .sp-tab.active {
+        background: #dcfce7;
+        color: #16a34a;
+    }
+
+.sp-pay-row {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .sp-pay-row:last-child {
+        border-bottom: none;
+    }
+
+.sp-pay-plate {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.sp-pay-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+    .sp-pay-tag.car {
+        background: #dbeafe;
+        color: #1d4ed8;
+    }
+
+    .sp-pay-tag.motor {
+        background: #ede9fe;
+        color: #7c3aed;
+    }
+
+.sp-pay-meta {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 3px;
+}
+
+.sp-pay-amount {
+    color: #16a34a;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* ── SETTINGS / CONFIG ── */
+.sp-config-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1px solid #f3f4f6;
+}
+
+.sp-config-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.sp-config-icon {
+    font-size: 22px;
+    color: #16a34a;
+}
+
+.sp-config-head h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.sp-rate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.sp-danger-card {
+    background: #fff0f0;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #fecaca;
+}
+
+.sp-danger-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+    .sp-danger-head span {
+        color: #dc2626;
+        font-size: 22px;
+    }
+
+    .sp-danger-head h3 {
+        color: #dc2626;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+/* ── LOGIN PAGE ── */
+.sp-login-bg {
+    min-height: 100vh;
+    background: #f0f4f8;
+    display: flex;
+    flex-direction: column;
+}
+
+.sp-login-nav {
+    padding: 14px 20px;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sp-login-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.sp-login-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 36px 32px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.sp-login-shield {
+    width: 72px;
+    height: 72px;
+    background: #dcfce7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    margin: 0 auto 20px;
+}
+
+.sp-login-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+/* ── VEHICLE EXIT LIST ── */
+.sp-search-wrap {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.sp-search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #9ca3af;
+}
+
+.sp-search {
+    width: 100%;
+    padding: 13px 14px 13px 40px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.sp-parked-list {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #f3f4f6;
+    overflow: hidden;
+}
+
+.sp-parked-header {
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.sp-parked-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+    .sp-parked-row:last-child {
+        border-bottom: none;
+    }
+
+.sp-veh-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #dbeafe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 12px;
+}
+
+    .sp-veh-icon.motor {
+        background: #ede9fe;
+    }
+
+.sp-veh-plate {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.sp-veh-duration {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.sp-veh-paid {
+    font-size: 12px;
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.sp-veh-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-direction: column;
+    text-align: right;
+}
+
+.sp-veh-amount {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.sp-veh-btns {
+    display: flex;
+    gap: 6px;
+}
+
+/* ── PAYMENT HISTORY ── */
+.sp-tab-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 16px;
+}
+
+.sp-tab {
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+    .sp-tab.active {
+        background: #dcfce7;
+        color: #16a34a;
+    }
+
+.sp-pay-row {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .sp-pay-row:last-child {
+        border-bottom: none;
+    }
+
+.sp-pay-plate {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.sp-pay-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+    .sp-pay-tag.car {
+        background: #dbeafe;
+        color: #1d4ed8;
+    }
+
+    .sp-pay-tag.motor {
+        background: #ede9fe;
+        color: #7c3aed;
+    }
+
+.sp-pay-meta {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 3px;
+}
+
+.sp-pay-amount {
+    color: #16a34a;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* ── SETTINGS / CONFIG ── */
+.sp-config-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1px solid #f3f4f6;
+}
+
+.sp-config-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.sp-config-icon {
+    font-size: 22px;
+    color: #16a34a;
+}
+
+.sp-config-head h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.sp-rate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.sp-danger-card {
+    background: #fff0f0;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #fecaca;
+}
+
+.sp-danger-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+    .sp-danger-head span {
+        color: #dc2626;
+        font-size: 22px;
+    }
+
+    .sp-danger-head h3 {
+        color: #dc2626;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+/* ── LOGIN PAGE ── */
+.sp-login-bg {
+    min-height: 100vh;
+    background: #f0f4f8;
+    display: flex;
+    flex-direction: column;
+}
+
+.sp-login-nav {
+    padding: 14px 20px;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sp-login-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.sp-login-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 36px 32px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.sp-login-shield {
+    width: 72px;
+    height: 72px;
+    background: #dcfce7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    margin: 0 auto 20px;
+}
+
+.sp-login-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.sp-nav-logout {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: #fee2e2;
+    color: #dc2626;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 8px;
+}
+
+    .sp-nav-logout:hover {
+        background: #fecaca;
+    }

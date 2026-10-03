@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+   CodeBehind="Site.Master.cs" Inherits="SmartParkWeb.SiteMaster" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>SmartPark</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/Content/SmartPark.css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <form runat="server">
+  <div class="sp-wrapper">
+    <!-- TOP NAV BAR -->
+    <div class="sp-navbar">
+      <div class="sp-brand">
+        <div class="sp-logo">P</div>
+        <div>
+          <div class="sp-brand-name">SmartPark</div>
+          <div class="sp-brand-sub">Management System</div>
+        </div>
+      </div>
+      <div class="sp-nav-right">
+        <span id="spClock" class="sp-clock"></span>
+        <a href="Config.aspx" class="sp-icon-btn" title="Settings">&#9881;</a>
+        <a href="#" class="sp-icon-btn" title="Logout"
+           onclick="if(confirm('Are you sure you want to logout?')){ window.location.href='Login.aspx'; } return false;">&#10132;</a>
+      </div>
+    </div>
+    <!-- PAGE CONTENT -->
+    <div class="sp-content">
+      <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+  </div>
+  </form>
+  <script>
+      function updateClock() {
+          var now = new Date();
+          var h = now.getHours(), m = now.getMinutes();
+          var ampm = h >= 12 ? "PM" : "AM";
+          h = h % 12 || 12;
+          var ts = (h < 10 ? "0" + h : h) + ":" + (m < 10 ? "0" + m : m) + " " + ampm;
+          var ds = now.toLocaleDateString("en-PH", { month: "short", day: "numeric", year: "2-digit" });
+          var el = document.getElementById("spClock");
+          if (el) el.innerHTML = ts + "<br/>" + ds;
+      }
+      updateClock(); setInterval(updateClock, 60000);
+  </script>
+</body>
+</html>
